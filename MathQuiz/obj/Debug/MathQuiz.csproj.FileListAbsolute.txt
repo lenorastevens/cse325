@@ -1,0 +1,10 @@
+C:\Users\lenor\OneDrive\Desktop\BYU-I Files\Winter 2024\CSE 325\cse325 projects\MathQuiz\bin\Debug\MathQuiz.exe.config
+C:\Users\lenor\OneDrive\Desktop\BYU-I Files\Winter 2024\CSE 325\cse325 projects\MathQuiz\bin\Debug\MathQuiz.exe
+C:\Users\lenor\OneDrive\Desktop\BYU-I Files\Winter 2024\CSE 325\cse325 projects\MathQuiz\bin\Debug\MathQuiz.pdb
+C:\Users\lenor\OneDrive\Desktop\BYU-I Files\Winter 2024\CSE 325\cse325 projects\MathQuiz\obj\Debug\MathQuiz.csproj.AssemblyReference.cache
+C:\Users\lenor\OneDrive\Desktop\BYU-I Files\Winter 2024\CSE 325\cse325 projects\MathQuiz\obj\Debug\MathQuiz.Form1.resources
+C:\Users\lenor\OneDrive\Desktop\BYU-I Files\Winter 2024\CSE 325\cse325 projects\MathQuiz\obj\Debug\MathQuiz.Properties.Resources.resources
+C:\Users\lenor\OneDrive\Desktop\BYU-I Files\Winter 2024\CSE 325\cse325 projects\MathQuiz\obj\Debug\MathQuiz.csproj.GenerateResource.cache
+C:\Users\lenor\OneDrive\Desktop\BYU-I Files\Winter 2024\CSE 325\cse325 projects\MathQuiz\obj\Debug\MathQuiz.csproj.CoreCompileInputs.cache
+C:\Users\lenor\OneDrive\Desktop\BYU-I Files\Winter 2024\CSE 325\cse325 projects\MathQuiz\obj\Debug\MathQuiz.exe
+C:\Users\lenor\OneDrive\Desktop\BYU-I Files\Winter 2024\CSE 325\cse325 projects\MathQuiz\obj\Debug\MathQuiz.pdb
