@@ -39,14 +39,16 @@
             this.CloseAddQuotesButton.TabIndex = 0;
             this.CloseAddQuotesButton.Text = "Close";
             this.CloseAddQuotesButton.UseVisualStyleBackColor = true;
+            this.CloseAddQuotesButton.Click += new System.EventHandler(this.CloseAddQuotesButton_Click);
             // 
             // AddQuotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(981, 747);
             this.Controls.Add(this.CloseAddQuotesButton);
             this.Name = "AddQuotes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Quotes";
             this.ResumeLayout(false);
 

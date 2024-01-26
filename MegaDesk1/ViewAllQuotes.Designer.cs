@@ -39,14 +39,16 @@
             this.CloseViewQuotesButton.TabIndex = 0;
             this.CloseViewQuotesButton.Text = "Close";
             this.CloseViewQuotesButton.UseVisualStyleBackColor = true;
+            this.CloseViewQuotesButton.Click += new System.EventHandler(this.CloseViewQuotesButton_Click);
             // 
             // ViewAllQuotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(981, 747);
             this.Controls.Add(this.CloseViewQuotesButton);
             this.Name = "ViewAllQuotes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "View All Quotes";
             this.ResumeLayout(false);
 

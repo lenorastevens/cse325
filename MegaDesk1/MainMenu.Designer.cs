@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.AddQuotesButton = new System.Windows.Forms.Button();
-            this.ViewQuotesButton = new System.Windows.Forms.Button();
+            this.ViewAllQuotesButton = new System.Windows.Forms.Button();
             this.SearchQuotesButton = new System.Windows.Forms.Button();
             this.ExitButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -42,15 +42,17 @@
             this.AddQuotesButton.TabIndex = 0;
             this.AddQuotesButton.Text = "&Add New Quote";
             this.AddQuotesButton.UseVisualStyleBackColor = true;
+            this.AddQuotesButton.Click += new System.EventHandler(this.AddQuotesButton_Click);
             // 
-            // ViewQuotesButton
+            // ViewAllQuotesButton
             // 
-            this.ViewQuotesButton.Location = new System.Drawing.Point(95, 210);
-            this.ViewQuotesButton.Name = "ViewQuotesButton";
-            this.ViewQuotesButton.Size = new System.Drawing.Size(410, 118);
-            this.ViewQuotesButton.TabIndex = 1;
-            this.ViewQuotesButton.Text = "&View Quotes";
-            this.ViewQuotesButton.UseVisualStyleBackColor = true;
+            this.ViewAllQuotesButton.Location = new System.Drawing.Point(95, 210);
+            this.ViewAllQuotesButton.Name = "ViewAllQuotesButton";
+            this.ViewAllQuotesButton.Size = new System.Drawing.Size(410, 118);
+            this.ViewAllQuotesButton.TabIndex = 1;
+            this.ViewAllQuotesButton.Text = "&View All Quotes";
+            this.ViewAllQuotesButton.UseVisualStyleBackColor = true;
+            this.ViewAllQuotesButton.Click += new System.EventHandler(this.ViewAllQuotesButton_Click);
             // 
             // SearchQuotesButton
             // 
@@ -60,6 +62,7 @@
             this.SearchQuotesButton.TabIndex = 2;
             this.SearchQuotesButton.Text = "&Search Quotes";
             this.SearchQuotesButton.UseVisualStyleBackColor = true;
+            this.SearchQuotesButton.Click += new System.EventHandler(this.SearchQuotesButton_Click);
             // 
             // ExitButton
             // 
@@ -74,12 +77,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1181, 755);
+            this.ClientSize = new System.Drawing.Size(981, 747);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.SearchQuotesButton);
-            this.Controls.Add(this.ViewQuotesButton);
+            this.Controls.Add(this.ViewAllQuotesButton);
             this.Controls.Add(this.AddQuotesButton);
             this.Name = "MegaDesk";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mega Desk";
             this.ResumeLayout(false);
 
@@ -88,7 +92,7 @@
         #endregion
 
         private System.Windows.Forms.Button AddQuotesButton;
-        private System.Windows.Forms.Button ViewQuotesButton;
+        private System.Windows.Forms.Button ViewAllQuotesButton;
         private System.Windows.Forms.Button SearchQuotesButton;
         private System.Windows.Forms.Button ExitButton;
     }

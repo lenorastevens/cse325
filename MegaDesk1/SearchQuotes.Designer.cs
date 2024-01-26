@@ -39,12 +39,13 @@
             this.CloseSearchButton.TabIndex = 0;
             this.CloseSearchButton.Text = "Close";
             this.CloseSearchButton.UseVisualStyleBackColor = true;
+            this.CloseSearchButton.Click += new System.EventHandler(this.CloseSearchButton_Click);
             // 
             // SearchQuotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1256, 985);
+            this.ClientSize = new System.Drawing.Size(981, 747);
             this.Controls.Add(this.CloseSearchButton);
             this.Name = "SearchQuotes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
