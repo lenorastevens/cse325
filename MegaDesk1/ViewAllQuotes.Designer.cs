@@ -28,12 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.CloseViewQuotesButton = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // CloseViewQuotesButton
+            // 
+            this.CloseViewQuotesButton.Location = new System.Drawing.Point(574, 363);
+            this.CloseViewQuotesButton.Name = "CloseViewQuotesButton";
+            this.CloseViewQuotesButton.Size = new System.Drawing.Size(186, 64);
+            this.CloseViewQuotesButton.TabIndex = 0;
+            this.CloseViewQuotesButton.Text = "Close";
+            this.CloseViewQuotesButton.UseVisualStyleBackColor = true;
+            // 
+            // ViewAllQuotes
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "ViewAllQuotes";
+            this.Controls.Add(this.CloseViewQuotesButton);
+            this.Name = "ViewAllQuotes";
+            this.Text = "View All Quotes";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button CloseViewQuotesButton;
     }
 }

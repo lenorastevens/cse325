@@ -28,12 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.CloseSearchButton = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // CloseSearchButton
+            // 
+            this.CloseSearchButton.Location = new System.Drawing.Point(866, 826);
+            this.CloseSearchButton.Name = "CloseSearchButton";
+            this.CloseSearchButton.Size = new System.Drawing.Size(241, 97);
+            this.CloseSearchButton.TabIndex = 0;
+            this.CloseSearchButton.Text = "Close";
+            this.CloseSearchButton.UseVisualStyleBackColor = true;
+            // 
+            // SearchQuotes
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "SearchQuotes";
+            this.ClientSize = new System.Drawing.Size(1256, 985);
+            this.Controls.Add(this.CloseSearchButton);
+            this.Name = "SearchQuotes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Search Quotes";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button CloseSearchButton;
     }
 }
