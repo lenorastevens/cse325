@@ -1,6 +1,6 @@
 ﻿namespace MegaDesk1
 {
-    partial class ViewAllQuotes
+    partial class AddNewQuote
     {
         /// <summary>
         /// Required designer variable.
@@ -28,37 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.CloseViewAllQuotesButton = new System.Windows.Forms.Button();
+            this.CloseAddNewQuoteButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // CloseViewAllQuotesButton
+            // CloseAddNewQuoteButton
             // 
-            this.CloseViewAllQuotesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CloseViewAllQuotesButton.Location = new System.Drawing.Point(632, 509);
-            this.CloseViewAllQuotesButton.Name = "CloseViewAllQuotesButton";
-            this.CloseViewAllQuotesButton.Size = new System.Drawing.Size(140, 40);
-            this.CloseViewAllQuotesButton.TabIndex = 0;
-            this.CloseViewAllQuotesButton.Text = "Close";
-            this.CloseViewAllQuotesButton.UseVisualStyleBackColor = true;
-            this.CloseViewAllQuotesButton.Click += new System.EventHandler(this.CloseViewAllQuotesButton_Click);
+            this.CloseAddNewQuoteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CloseAddNewQuoteButton.Location = new System.Drawing.Point(632, 509);
+            this.CloseAddNewQuoteButton.Name = "CloseAddNewQuoteButton";
+            this.CloseAddNewQuoteButton.Size = new System.Drawing.Size(140, 40);
+            this.CloseAddNewQuoteButton.TabIndex = 0;
+            this.CloseAddNewQuoteButton.Text = "Close";
+            this.CloseAddNewQuoteButton.UseVisualStyleBackColor = true;
+            this.CloseAddNewQuoteButton.Click += new System.EventHandler(this.CloseAddNewQuoteButton_Click);
             // 
-            // ViewAllQuotes
+            // AddNewQuote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.CloseViewAllQuotesButton);
+            this.Controls.Add(this.CloseAddNewQuoteButton);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "ViewAllQuotes";
+            this.Name = "AddNewQuote";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "View All Quotes";
+            this.Text = "Add New Quote";
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button CloseViewAllQuotesButton;
+        private System.Windows.Forms.Button CloseAddNewQuoteButton;
     }
 }

@@ -16,5 +16,12 @@ namespace MegaDesk1
         {
             InitializeComponent();
         }
+
+        private void CloseViewAllQuotesButton_Click(object sender, EventArgs e)
+        {
+            MegaDesk openMegaDesk = (MegaDesk)Tag;
+            openMegaDesk.Show();
+            Close();
+        }
     }
 }

@@ -16,5 +16,29 @@ namespace MegaDesk1
         {
             InitializeComponent();
         }
+
+        private void AddNewQuoteButton_Click(object sender, EventArgs e)
+        {
+            AddNewQuote openAddNewQuote = new AddNewQuote();
+            openAddNewQuote.Tag = this;
+            openAddNewQuote.Show(this);
+            Hide();
+        }
+
+        private void ViewAllQuotesButton_Click(object sender, EventArgs e)
+        {
+            ViewAllQuotes openViewAllQuotes = new ViewAllQuotes();
+            openViewAllQuotes.Tag = this;
+            openViewAllQuotes.Show(this);
+            Hide();
+        }
+
+        private void SearchQuotesButton_Click(object sender, EventArgs e)
+        {
+            SearchQuotes openSearchQuotes = new SearchQuotes();
+            openSearchQuotes.Tag = this;
+            openSearchQuotes.Show(this);
+            Hide();
+        }
     }
 }

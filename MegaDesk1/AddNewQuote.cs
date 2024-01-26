@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace MegaDesk1
 {
-    public partial class SearchQuotes : Form
+    public partial class AddNewQuote : Form
     {
-        public SearchQuotes()
+        public AddNewQuote()
         {
             InitializeComponent();
         }
 
-        private void CloseSearchQuotesButton_Click(object sender, EventArgs e)
+        private void CloseAddNewQuoteButton_Click(object sender, EventArgs e)
         {
             MegaDesk openMegaDesk = (MegaDesk)Tag;
             openMegaDesk.Show();
