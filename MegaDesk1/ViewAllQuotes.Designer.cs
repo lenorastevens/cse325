@@ -33,12 +33,13 @@
             // 
             // CloseViewAllQuotesButton
             // 
+            this.CloseViewAllQuotesButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.CloseViewAllQuotesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CloseViewAllQuotesButton.Location = new System.Drawing.Point(632, 509);
             this.CloseViewAllQuotesButton.Name = "CloseViewAllQuotesButton";
             this.CloseViewAllQuotesButton.Size = new System.Drawing.Size(140, 40);
             this.CloseViewAllQuotesButton.TabIndex = 0;
-            this.CloseViewAllQuotesButton.Text = "Close";
+            this.CloseViewAllQuotesButton.Text = "Main Menu";
             this.CloseViewAllQuotesButton.UseVisualStyleBackColor = true;
             this.CloseViewAllQuotesButton.Click += new System.EventHandler(this.CloseViewAllQuotesButton_Click);
             // 
@@ -46,6 +47,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.RosyBrown;
+            this.CancelButton = this.CloseViewAllQuotesButton;
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.CloseViewAllQuotesButton);
             this.MaximizeBox = false;

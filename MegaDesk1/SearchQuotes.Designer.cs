@@ -33,12 +33,13 @@
             // 
             // CloseSearchQuotesButton
             // 
+            this.CloseSearchQuotesButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.CloseSearchQuotesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CloseSearchQuotesButton.Location = new System.Drawing.Point(632, 509);
             this.CloseSearchQuotesButton.Name = "CloseSearchQuotesButton";
             this.CloseSearchQuotesButton.Size = new System.Drawing.Size(140, 40);
             this.CloseSearchQuotesButton.TabIndex = 0;
-            this.CloseSearchQuotesButton.Text = "Close";
+            this.CloseSearchQuotesButton.Text = "Main Menu";
             this.CloseSearchQuotesButton.UseVisualStyleBackColor = true;
             this.CloseSearchQuotesButton.Click += new System.EventHandler(this.CloseSearchQuotesButton_Click);
             // 
@@ -46,6 +47,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.RosyBrown;
+            this.CancelButton = this.CloseSearchQuotesButton;
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.CloseSearchQuotesButton);
             this.MaximizeBox = false;
