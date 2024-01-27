@@ -8,5 +8,11 @@ namespace MegaDesk1
 {
     internal class DeskQuotes
     {
+        List<Desk> desks = new List<Desk>();
+        public DeskQuotes() 
+        {
+            
+        }
+
     }
 }
