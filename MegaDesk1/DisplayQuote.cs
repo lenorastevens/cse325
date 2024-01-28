@@ -12,16 +12,21 @@ namespace MegaDesk1
 {
     public partial class DisplayQuote : Form
     {
-        public DisplayQuote()
+        List<Desk> desks = new List<Desk>();
+        public decimal QuoteTotal;
+
+        public DisplayQuote(decimal quoteTotal)
         {
             InitializeComponent();
         }
+        
 
         private void CloseDisplayQuoteButton_Click(object sender, EventArgs e)
         {
-            MegaDesk megaDesk = (MegaDesk)Tag;
-            megaDesk.Show();
             Close();
         }
+
+
     }
+
 }
