@@ -14,36 +14,30 @@ namespace MegaDesk1
         public const int MIN_DEPTH = 12;
         public const int MAX_DEPTH = 48;
 
-        string customerName;
-        int deskWidth;
-        int deskDepth;
-        int numDrawers;
-        string surfaceMaterial;
-        int rushOrderDays;
-        double totalPrice;
+        public string Datequote {  get; set; }
+        public string CustomerName { get; set; }
+        public int Width { get; set; }
+        public int Depth { get; set; }
+        public int NumDrawers { get; set; }
+        public DesktopMaterial Material { get; set; }
+        public int RushDays { get; set; }
 
-        public Desk(string name, int width, int depth, int drawers, string material, int rush) 
+        public Desk() 
         {
-            customerName = name;
-            deskWidth = width;
-            deskDepth = depth;
-            numDrawers = drawers;
-            surfaceMaterial = material;
-            rushOrderDays = rush;
-            totalPrice = 0;
+
         }
 
-        public double calculateQuotePrice() 
-        { 
+        public void DisplayQuote()
+        {
 
-            return totalPrice; 
         }
+
     }
 
-    enum DesktopMaterial
+    public enum DesktopMaterial
     {
-        Oak,
         Laminate,
+        Oak,
         Rosewood,
         Veneer,
         Pine,
