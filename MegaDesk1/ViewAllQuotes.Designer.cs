@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.CloseViewAllQuotesButton = new System.Windows.Forms.Button();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // CloseViewAllQuotesButton
@@ -43,6 +44,14 @@
             this.CloseViewAllQuotesButton.UseVisualStyleBackColor = true;
             this.CloseViewAllQuotesButton.Click += new System.EventHandler(this.CloseViewAllQuotesButton_Click);
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(36, 37);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(715, 443);
+            this.richTextBox1.TabIndex = 1;
+            this.richTextBox1.Text = "";
+            // 
             // ViewAllQuotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -50,6 +59,7 @@
             this.BackColor = System.Drawing.Color.RosyBrown;
             this.CancelButton = this.CloseViewAllQuotesButton;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.CloseViewAllQuotesButton);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -63,5 +73,6 @@
         #endregion
 
         private System.Windows.Forms.Button CloseViewAllQuotesButton;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }

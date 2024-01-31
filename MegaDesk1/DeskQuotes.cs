@@ -18,28 +18,29 @@ namespace MegaDesk1
         public const decimal ROSEWOOD_COST = 300;
         public const decimal VENEER_COST = 125;
 
-        public Desk Desk { get; set; }
+        public string quoteDate = "";
+        public Desk newDesk = new Desk();
+        public string name = "";
+        public int rushDays = 0;
 
-        public List<DeskQuotes> Quotes {  get; private set; }
+
+        public List<DeskQuotes> quotesList; 
+        
+
         public DeskQuotes() 
         {
-            Quotes = new List<DeskQuotes>();
+            
         }
 
         public void AddDesk(Desk desk)
         {
-            DeskQuotes deskQuote = new DeskQuotes
-            {
-                Desk = desk               
-            };
-
-            Quotes.Add(deskQuote);
+           
         }
         public decimal CalculateQuoteTotal()
         {
             decimal basePrice = BASE_PRICE;
             decimal surfaceAreaCost = CalculateSurfaceAreaCost();
-            decimal drawersCost = Desk.NumDrawers * PER_DRAWER;
+            decimal drawersCost = newDesk.numDrawers * PER_DRAWER;
             decimal materialCost = CalculateMaterialCost();
             decimal rushOrderCost = CalculateRushOrderCost();
 
@@ -48,7 +49,7 @@ namespace MegaDesk1
         }
         private decimal CalculateSurfaceAreaCost()
         {
-            int surfaceArea = Desk.Width * Desk.Depth;
+            int surfaceArea = newDesk.width * newDesk.depth;
             int threshold = 1000;
             if (surfaceArea > threshold)
             {
@@ -62,7 +63,7 @@ namespace MegaDesk1
 
         private decimal CalculateMaterialCost()
         {
-            switch (Desk.Material)
+            switch (newDesk.material)
             {
                 case DesktopMaterial.Oak:
                     return OAK_COST;
@@ -83,15 +84,15 @@ namespace MegaDesk1
         {
             decimal rushOrderCost = 0;
 
-            if (Desk.RushDays == 3)
+            if (rushDays == 3)
             {
                 rushOrderCost = CalculateAdditionalCost(60, 70, 80);
             }
-            else if (Desk.RushDays == 5)
+            else if (rushDays == 5)
             {
                 rushOrderCost = CalculateAdditionalCost(40, 50, 60);
             }
-            else if (Desk.RushDays == 7)
+            else if (rushDays == 7)
             {
                 rushOrderCost = CalculateAdditionalCost(30, 35, 40);
             }
@@ -101,7 +102,7 @@ namespace MegaDesk1
 
         private decimal CalculateAdditionalCost(decimal sizeLess1000, decimal size1000to2000, decimal sizeGreaterThan2000)
         {
-            int surfaceArea = Desk.Width * Desk.Depth;
+            int surfaceArea = newDesk.width * newDesk.depth;
             if (surfaceArea < 1000)
             {
                 return sizeLess1000;
@@ -116,28 +117,5 @@ namespace MegaDesk1
             }
         }
 
-        public decimal CalculateTotalForDesk(int deskIndex)
-        {
-            if (deskIndex >= 0 && deskIndex < Quotes.Count)
-            {
-                return Quotes[deskIndex].CalculateQuoteTotal();
-            }
-            else
-            {
-                return 0;
-            }
-        }
-
-        public decimal CalculateTotalForAllDesks()
-        {
-            decimal total = 0;
-
-            foreach (var quote in Quotes)
-            {
-                total += quote.CalculateQuoteTotal();
-            }
-
-            return total;
-        }
     }
 }
