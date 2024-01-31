@@ -2,15 +2,17 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace MegaDesk1
 {
-    public partial class AddNewQuote : Form
+    internal partial class AddNewQuote : Form
     {
         private DeskQuotes deskQuotesInstance;
         public AddNewQuote()
@@ -27,70 +29,124 @@ namespace MegaDesk1
             Close();
         }
 
-        private void deskWidth_TextChanged(object sender, KeyPressEventArgs e)
+        private void CustomerName_Validating(object sender, CancelEventArgs e)
         {
-            if (Char.IsControl(e.KeyChar))
+            if (string.IsNullOrWhiteSpace(CustomerName.Text))
             {
-                return;
+                e.Cancel = true; // Prevent focus change
+                errorProvider1.SetError(CustomerName, "Please enter a name."); // Display error message
             }
-
-            if (!Char.IsDigit(e.KeyChar)) 
+            else
             {
-                e.Handled = true; 
+                e.Cancel = false; // Allow focus change
+                errorProvider1.SetError(CustomerName, ""); // Clear error message
             }
         }
 
+        private void DeskWidth_Validating(object sender, CancelEventArgs e)
+        {
+           
+            int minWidth = 24;
+            int maxWidth = 96;
+
+            if (!int.TryParse(DeskWidth.Text, out int width) || width < minWidth || width > maxWidth)
+            {
+                e.Cancel = true; 
+                errorProvider1.SetError(DeskWidth, $"Width needs to be an integer between {minWidth} and {maxWidth}.");
+            }
+            else
+            {
+                e.Cancel= false;
+                errorProvider1.SetError(DeskWidth, "");
+            }
+        }
+
+        private void DeskDepth_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+
+        }
+
+        private void DeskDepth_Validating(object sender, CancelEventArgs e)
+        {
+            int minDepth = 12;
+            int maxDepth = 48;
+
+            if (!int.TryParse((sender as TextBox).Text, out int depth) || depth < minDepth || depth > maxDepth)
+            {
+                errorProvider1.SetError((sender as TextBox), $"Depth needs to be an integer between {minDepth} and {maxDepth}.");
+            }
+            else
+            {
+                errorProvider1.SetError((sender as TextBox), ""); // Clear the error message
+            }
+        }
+
+        private void Material_Validating(object sender, CancelEventArgs e)
+        {
+            if (Material.SelectedItem == null)
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(Material, "Please select a surface Material.");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(Material, "");
+            }
+        }
+
+        private void RushSelection_Validating(object sender, CancelEventArgs e)
+        {
+            if (RushSelection.SelectedItem == null)
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(RushSelection, "Please select a surface Material.");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(RushSelection, "");
+            }
+        }
 
         private void SubmitQuote_Click(object sender, EventArgs e)
         {
+            var materials = Enum.GetValues(typeof(DesktopMaterial));
+            Material.DataSource = materials;
+            Material.DisplayMember = "";
+
+            int[] Array = { 0, 3, 5, 7 };
+            int index = RushSelection.SelectedIndex;
+
+            DeskQuotes quote = new DeskQuotes();
+            quote.name = CustomerName.Text;
+            quote.quoteDate = QuoteDate.Text;
+            quote.newDesk.width = int.Parse(DeskWidth.Text);
+            quote.newDesk.depth = int.Parse(DeskDepth.Text);
+            quote.newDesk.numDrawers = (int)NumDrawers.Value;
+            quote.newDesk.material = (DesktopMaterial)Material.SelectedItem;
+            quote.rushDays = Array[index];
+            decimal price = quote.CalculateQuoteTotal();
             
+            DisplayQuote displayQuoteForm = new DisplayQuote();
+            displayQuoteForm.displayQuoteData(quote.name, price, quote.quoteDate);
+                  
             
-
-            if (int.TryParse(DeskWidth.Text, out int width) && int.TryParse(DeskDepth.Text, out int depth))
-            {
-                var materials = Enum.GetValues(typeof(DesktopMaterial));
-                Material.DataSource = materials;
-
-                Material.DisplayMember = "";
-                DesktopMaterial material= (DesktopMaterial)Material.SelectedItem;
-                string date = QuoteDate.Text.ToString();
-                int[] Array = { 0, 3, 5, 7 };
-                int index= RushSelection.SelectedIndex;
-
-                Desk newDesk = new Desk
-                {
-                    Datequote = date,
-                    CustomerName = CustomerName.Text,
-                    Width = width,
-                    Depth = depth,
-                    NumDrawers = (int)NumDrawers.Value,
-                    Material = material,
-                    RushDays = Array[index]
-            };
-
-
-
-                
-
-                DeskQuotes newQuote = new DeskQuotes();
-                newQuote.AddDesk(newDesk);
-                
-
-                decimal quoteTotal = newQuote.CalculateQuoteTotal();
-
-                
-                DisplayQuote displayQuoteForm = new DisplayQuote(quoteTotal);
-
-                displayQuoteForm.Show();
-            }
-
-            else
-            {
-                MessageBox.Show("Invalid desk width or depth entered.");
-            }
-            
-
-
+            displayQuoteForm.Tag = this;
+            displayQuoteForm.Show();
+            this.Hide();
+   
         }
+
+        
     }
 }
