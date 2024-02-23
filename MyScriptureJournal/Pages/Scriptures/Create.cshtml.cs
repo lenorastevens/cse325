@@ -5,16 +5,16 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using RazorPagesMovie.Data;
-using RazorPagesMovie.Models;
+using MyScriptureJournal.Data;
+using MyScriptureJournal.Models;
 
-namespace RazorPagesMovie.Pages.Movies
+namespace MyScriptureJournal.Pages.Scriptures
 {
     public class CreateModel : PageModel
     {
-        private readonly RazorPagesMovie.Data.RazorPagesMovieContext _context;
+        private readonly MyScriptureJournal.Data.MyScriptureJournalContext _context;
 
-        public CreateModel(RazorPagesMovie.Data.RazorPagesMovieContext context)
+        public CreateModel(MyScriptureJournal.Data.MyScriptureJournalContext context)
         {
             _context = context;
         }
@@ -25,7 +25,7 @@ namespace RazorPagesMovie.Pages.Movies
         }
 
         [BindProperty]
-        public Movie Movie { get; set; } = default!;
+        public Scripture Scripture { get; set; } = default!;
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
@@ -34,8 +34,8 @@ namespace RazorPagesMovie.Pages.Movies
             {
                 return Page();
             }
-            
-            _context.Movie.Add(Movie);
+
+            _context.Scripture.Add(Scripture);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

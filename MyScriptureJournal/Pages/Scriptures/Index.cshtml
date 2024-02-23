@@ -1,0 +1,89 @@
+﻿@page
+@model MyScriptureJournal.Pages.Scriptures.IndexModel
+
+@{
+    ViewData["Title"] = "Journal Records";
+}
+
+<h1>Journal Records</h1>
+
+<p>
+    <a asp-page="Create">Add Entry</a>
+</p>
+
+<form>
+    <p>
+        <select asp-for="ScriptureBook" asp-items="Model.Books">
+            <option value="">All</option>
+        </select>
+        Search Impressions: <input type="text" asp-for="SearchString" placeholder="keyword(s)" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Scripture[0].EntryDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Scripture[0].StandardWork)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Scripture[0].Book)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Scripture[0].Chapter)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Scripture[0].StartVerse)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Scripture[0].EndVerse)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Scripture[0].Impression)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Scripture[0].VerseText)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Scripture) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EntryDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StandardWork)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Book)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Chapter)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartVerse)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndVerse)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Impression)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VerseText)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
