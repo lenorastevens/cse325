@@ -37,7 +37,7 @@ body {
     background: linear-gradient(315deg, #CEF9F2 0%, #D5C5C8 74% );
 }
 
-h1 {
+h1, h5 {
     font-family: var(--heading-font);
     text-shadow: 5px 5px 10px grey;
 }
