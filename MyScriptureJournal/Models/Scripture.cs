@@ -11,7 +11,6 @@ namespace MyScriptureJournal.Models
         public DateTime EntryDate { get; set; }
 
         [StringLength(25, MinimumLength = 3), Required]
-        [Display(Name = "Standard Work")]
         public required string StandardWork { get; set; }
 
         [StringLength(25, MinimumLength = 3), Required]
@@ -20,10 +19,10 @@ namespace MyScriptureJournal.Models
         [Required]
         public int Chapter { get; set; }
 
-        [Display(Name = "Start Verse"), Required]
+        [Display(Name = "Start"), Required]
         public int StartVerse { get; set; }
 
-        [Display(Name = "End Verse")]
+        [Display(Name = "End")]
         public int? EndVerse { get; set; }
 
         [Required]
