@@ -1,0 +1,106 @@
+
+
+.delius-swash caps-regular {
+    font-family: "Delius Swash Caps", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.dm-sans {
+    font-family: "DM Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight:400;
+    font-style: normal;
+}
+
+body {
+    background-color: #333366;
+    color: #ffffff;
+    font-family: "DM Sans", sans-serif;
+}
+
+.nav-item {
+    color: #333366;
+}
+.nav-item:hover {
+    background-color: #333366;
+    color: #ffff33;
+}
+
+table.table, label {
+    color: #ffff33;
+}
+
+a, table.table a {
+    color: #ffff33;
+}
+
+a:hover, table.table a:hover {
+    color: #ffffff;
+}
+
+#logo {
+    width: 80%;
+    padding: 10%;
+}
+#nav-logo {
+    width: 25%;
+    float: right;
+    display: block;
+}
+
+.movie-pic {
+    max-height: 300px;
+    width: auto;
+}
+
+#head-section {
+    background-color: #ffff33;
+    color: #333366;
+}
+
+#head-section a, .nav-link {
+    color: #333366;
+    font-weight: 700;
+}
+
+#head-section a:hover{
+    background-color: #333366;
+    color: #ffff33;
+}
+
+h1, h4 {
+    font-family: "Delius Swash Caps", cursive;
+    color: #ffff33;
+}
+
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    margin: 2%;
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+input.btn {
+    margin-top: 2%;
+    background-color:#ffffff;
+    color: #333366;
+    font-weight: bold;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
