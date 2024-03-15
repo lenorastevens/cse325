@@ -1,31 +1,138 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
+.ewert-regular {
+    font-family: "Ewert", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.farsan-regular {
+    font-family: "Farsan", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
 a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+    color: #eae4d4;
+}
+
+a.navbar-brand:hover {
+    color: #76dddd;
 }
 
 /* Provide sufficient contrast against white background */
 a {
-  color: #0366d6;
+    color: #563a3a;
+}
+
+a:hover {
+    color: #eaa79c;
+}
+
+body {
+    background-color: #eae4d4;
+    font-family: "Farsan";
+    font-weight: 600;
+    font-size: larger;
+}
+
+#logo {
+    width: 25%;
+    height: auto;
+    float: left;
+}
+
+.jumbotron {
+    background-color: #563a3a;
+}
+
+#head-section {
+    background-color: #563a3a;
+    color: #eae4d4;
+}
+
+#school-title {
+    display: block;
+    width: 70%;
+    margin: 0 auto;
+}
+
+#motto {
+    color: #76dddd;
+    text-align: center;
+}
+
+#school-icon {
+    width: 5%;
 }
 
 #library {
-    width: 90%;
+    width: 100%;
 }
 
 .btn-primary {
   color: #fff;
-  background-color: #1b6ec2;
+  background-color: #76dddd;
   border-color: #1861ac;
 }
 
+.btn-primary:hover {
+    color: #563a3a;
+}
+
+.btn.btn-default {
+    color: #563a3a;
+}
+
+.btn.btn-default:hover {
+    color: #76dddd;
+}
+
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+    color: #eae4d4;
+    background-color: #563a3a;
+    border-color: #1861ac;
+}
+
+label {
+    color: #563a3a;
+}
+
+.table thead th, .table .top-row {
+    border-bottom: 4px groove #76dddd;
+}
+
+.table td, .table th {
+    color: #563a3a;
+    border: 1px groove #76dddd;
+}
+
+table {
+    border: 4px groove #76dddd;
+}
+
+.form-actions {
+    color: #563a3a;
+}
+
+h1, h2, h3, h4 {
+    color: #563a3a;
+}
+
+.container {
+    color: #563a3a;
+}
+
+ul li.nav-item {
+    color: #eae4d4;
+}
+
+li.nav-item:hover {
+    color: #76dddd;
 }
 
 /* Sticky footer styles
