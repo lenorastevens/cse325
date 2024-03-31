@@ -4,12 +4,12 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Vendor Index</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Add New Vendor</a>
 </p>
-<table class="table">
+<table id="vendor-table" class="table">
     <thead>
         <tr>
             <th>
@@ -87,3 +87,21 @@
 }
     </tbody>
 </table>
+
+<div id="vendor-container">
+    @foreach (var item in Model)
+    {
+        <section class="vendor-card">
+            <h3>@Html.DisplayFor(modelItem => item.Name)</h3>
+            <h4>@Html.DisplayFor(modelItem => item.Contact)</h4>
+            <h5>@Html.DisplayFor(modelItem => item.Position)</h5>
+            <h5>@Html.DisplayFor(modelItem => item.Phone)</h5>
+            <h5>@Html.DisplayFor(modelItem => item.Email)</h5>
+            <h6>@Html.DisplayFor(modelItem => item.City), @Html.DisplayFor(modelItem => item.State)</h6>
+            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+            <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+
+        </section>    
+    }
+</div>

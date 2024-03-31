@@ -1,5 +1,5 @@
 html {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 @media (min-width: 768px) {
@@ -18,5 +18,42 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    background: url("/images/cansBackgroung.png"); 
+    background-size: cover;
+}
+
+
+#home-title {
+    padding: 2%;
+    font-weight: 900;
+    font-size:10vh;
+    background: url("/images/peakPoetry.png");
+    background-size: cover;
+    background-attachment: fixed;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#home-logo {
+    width: 30%;
+    display: block;
+    margin: auto;
+    color:aqua;
+}
+
+#vendor-table {
+    background-color: white;
+}
+
+#vendor-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    grid-gap: 4%;
+    align-items: center;
+    text-align: center;
+}
+
+.vendor-card {
+    background-color: white;
 }
