@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using VendorManagement.Data;
 using VendorManagement.Models;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace VendorManagement.Controllers
 {
@@ -20,9 +22,28 @@ namespace VendorManagement.Controllers
         }
 
         // GET: Vendors
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
-            return View(await _context.Vendors.ToListAsync());
+            if (_context.Vendors == null)
+            {
+                return Problem("Entity set 'MvcMovieContext.Movie'  is null.");
+            }
+
+            var Vendors = from m in _context.Vendors
+                         select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                Vendors = Vendors.Where(s => s.Name!.Contains(searchString) || s.Contact!.Contains(searchString));
+            }
+
+            return View(await Vendors.ToListAsync());
+        }
+
+        [HttpPost]
+        public string Index(string searchString, bool notUsed)
+        {
+            return "From [HttpPost]Index: filter on " + searchString;
         }
 
         // GET: Vendors/Details/5
