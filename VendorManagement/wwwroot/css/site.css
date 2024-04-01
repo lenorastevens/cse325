@@ -62,3 +62,17 @@ body {
     box-shadow: 2px 4px rgba(20,20,43,.08);
     border-radius: 24px;
 }
+
+#edit-div {
+    width: 50%;
+    margin: auto;
+}
+
+#edit-form {
+    margin: auto;
+    justify-self center;
+    background-color: white;
+    padding: 2%;
+    box-shadow: 2px 4px rgba(20,20,43,.08);
+    border-radius: 15px;
+}
